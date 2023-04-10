@@ -1,0 +1,54 @@
+//API 1 Getting a list of all todos whose status is 'TO DO'
+
+GET http://localhost:3000/todos/?status=TO%20DO
+
+###
+//API 2 Returns a list of all todos whose priority is 'HIGH' and status is 'IN PROGRESS'
+###
+GET http://localhost:3000/todos/?priority=HIGH&status=IN%20PROGRESS
+
+//
+###
+GET http://localhost:3000/todos/?priority=HIGH
+
+###
+GET http://localhost:3000/todos/?search_q=,
+
+###
+GET http://localhost:3000/todos/4/
+
+###
+POST http://localhost:3000/todos
+Content-Type: application/json
+
+{
+  "id": 10,
+  "todo": "Finalize event theme",
+  "priority": "LOW",
+  "status": "TO DO"
+}
+
+###
+PUT http://localhost:3000/todos/4/
+Content-Type: application/json
+
+{
+      "status": "DONE"
+    }
+
+###
+PUT http://localhost:3000/todos/4/
+Content-Type: application/json
+
+{
+      "priority": "HIGH"
+    }
+###
+PUT http://localhost:3000/todos/4/
+Content-Type: application/json
+
+{
+      "todo": "Some task"
+    }
+###
+DELETE  http://localhost:3000/todos/4/
